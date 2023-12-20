@@ -1,13 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 
-class UserAccount(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    username = models.CharField(max_length=100)
+class UserAccount(AbstractUser):
+    username = models.CharField(max_length=100, unique=True)
     email = models.EmailField()
-    name = models.CharField(max_length=40)
-    password = models.CharField(max_length=40)
+    name = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
 
     def __str__(self):
         return self.username

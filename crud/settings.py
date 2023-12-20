@@ -133,3 +133,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/Downloads/'
 MEDIA_ROOT = BASE_DIR/"Downloads"
+AUTH_USER_MODEL = "accounts.UserAccount"

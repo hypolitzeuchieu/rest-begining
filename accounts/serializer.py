@@ -18,7 +18,7 @@ class UserSerializers(serializers.Serializer):
     username = serializers.CharField(max_length=100, validators=[validate_username])
     name = serializers.CharField(max_length=40)
     email = serializers.EmailField(validators=[validate_email])
-    password = serializers.CharField(style={'input_type': 'password'})
+    password = serializers.CharField(style={'input_type': 'password'}, write_only=True)
     user_product = serializers.SerializerMethodField(read_only=True)
 
     def save(self, **kwargs):
